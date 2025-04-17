@@ -8,7 +8,6 @@ export default async function getMovies(title: string) {
         }
 
         const data = await response.json()
-        console.log("Daten geladen!")
         return data
 
     } catch (error) {
