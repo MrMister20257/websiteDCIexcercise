@@ -1,10 +1,8 @@
 "use client"
 import { Typewriter } from "react-simple-typewriter";
-import { Button } from "@/components/ui/button"
 import {
   AlertDialog,
   AlertDialogAction,
-  AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
   AlertDialogFooter,
@@ -16,7 +14,7 @@ import {
 
 import { useState, useEffect } from "react";
 
-const erloesen = () => {
+const Erloesen = () => {
   const [showAction, setShowAction] = useState(false)
 
   useEffect(() => {
@@ -65,7 +63,7 @@ export default function Home() {
               </AlertDialogDescription>
             </AlertDialogHeader>
             <AlertDialogFooter>
-              {erloesen()}
+              {Erloesen()}
             </AlertDialogFooter>
           </AlertDialogContent>
         </AlertDialog>

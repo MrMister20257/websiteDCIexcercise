@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import getMovies from "../utils/getMovies";
 import {
     Card,
@@ -12,6 +12,7 @@ import {
   } from "@/components/ui/card"
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Image from "next/image";
 
 type Movie = {
     Title: string;
@@ -54,7 +55,7 @@ export default function Filmepage() {
         setError(null)
         setIsLoading(true)
         try {
-            let title = inputRef.current?.value || ""
+            const title = inputRef.current?.value || ""
             const data = await getMovies(title)
             console.log("heeelooo", data.Title)
             if(data.Error === "Movie not found!") {
@@ -74,7 +75,6 @@ export default function Filmepage() {
         }
     }
 
-    console.log(movies)
 
     return (
         <main className="h-full w-full flex justify-center items-center gap-5 p-5 z-10">
@@ -102,7 +102,7 @@ export default function Filmepage() {
                                 {movies.Title}
                             </CardTitle>
                         )}
-                            <img src={movies.Poster} alt="Movie Cover" className="max-h-40 m-auto mb-6"/>
+                            <Image src={movies.Poster} alt="Movie Cover" className="max-h-40 m-auto mb-6"/>
                             <CardDescription className="w-6/12 text-center text-white bg-gray-900/90 backdrop-blur-xs rounded-md p-2">{movies.Plot}</CardDescription>
                         </CardHeader>
                         <CardContent className="w-fit text-white bg-gray-900/90 backdrop-blur-xs rounded-md p-2 self-center">

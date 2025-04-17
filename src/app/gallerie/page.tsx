@@ -1,4 +1,5 @@
 "use client"
+import Image from 'next/image';
 import { useRef, useEffect} from 'react';
 
 const dataObj = [
@@ -47,7 +48,7 @@ export default function Galleriepage() {
                 `}</style>
                 
                 {dataObj.map((item, index) => (
-                    <img 
+                    <Image 
                         key={index}
                         src={item.url} 
                         alt={`Bild ${index + 1}`}
