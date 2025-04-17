@@ -32,7 +32,7 @@ export default function Galleriepage() {
     }, []);
 
     return (
-        <main className="w-full h-full relative flex items-center justify-center">
+        <main className="w-full h-full relative flex items-center justify-center p-10">
             <div 
                 ref={scrollContainerRef}
                 className="h-full w-full flex items-center gap-5 overflow-x-scroll scroll whitespace-nowrap"
