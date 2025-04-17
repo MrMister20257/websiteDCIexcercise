@@ -57,7 +57,6 @@ export default function Filmepage() {
         try {
             const title = inputRef.current?.value || ""
             const data = await getMovies(title)
-            console.log("heeelooo", data.Title)
             if(data.Error === "Movie not found!") {
                 throw new Error("Film nicht gefunden!")
             }
